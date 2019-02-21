@@ -5,7 +5,18 @@
         "tslint-react"
     ],
     "rules": {
-        "quotemark": [true, "single", "avoid-escape", "avoid-template"]
+        "quotemark": [
+            true,
+            "single",
+            "avoid-escape",
+            "avoid-template"
+        ]
+    },
+    "jsRules": {
+        "quotemark": [
+            true,
+            "single"
+        ]
     },
     "rulesDirectory": []
 }
