@@ -1,9 +1,9 @@
-import { createStore, applyMiddleware, compose } from "redux";
-import { routerMiddleware } from "connected-react-router/immutable";
-import { fromJS } from "immutable";
-import createRootReducer from "./rootReducer";
-import { rootEpic, epicMiddleWare } from "./rootEpic";
-import { epic$ } from "./rootEpic";
+import { createStore, applyMiddleware, compose } from 'redux';
+import { routerMiddleware } from 'connected-react-router/immutable';
+import { fromJS } from 'immutable';
+import createRootReducer from './rootReducer';
+import { rootEpic, epicMiddleWare } from './rootEpic';
+import { epic$ } from './rootEpic';
 
 export default function configureStore(preloadedState = {}, history) {
 
@@ -14,8 +14,8 @@ export default function configureStore(preloadedState = {}, history) {
     const enhancers = [applyMiddleware(...middlewares)];
 
     const composeEnhancers =
-        process.env.NODE_ENV !== "production" &&
-            typeof window === "object" &&
+        process.env.NODE_ENV !== 'production' &&
+            typeof window === 'object' &&
             window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
             ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
             : compose;
@@ -32,15 +32,15 @@ export default function configureStore(preloadedState = {}, history) {
     // Make reducers hot reloadable, see http://mxs.is/googmo
     /* istanbul ignore next */
     if (module.hot) {
-        module.hot.accept("./rootReducer", () => {
+        module.hot.accept('./rootReducer', () => {
             store.replaceReducer(createRootReducer(store.asyncReducers));
         });
     }
     if (module.hot) {
-        module.hot.accept("./rootEpic", () => {
-            const nextRootEpic = require("./rootEpic").rootEpic;
+        module.hot.accept('./rootEpic', () => {
+            const nextRootEpic = require('./rootEpic').rootEpic;
             // First kill any running epics
-            store.dispatch({ type: "EPIC_END" });
+            store.dispatch({ type: 'EPIC_END' });
             // Now setup the new one
             epic$.next(nextRootEpic);
         });

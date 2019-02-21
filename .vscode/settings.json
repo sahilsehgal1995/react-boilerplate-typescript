@@ -1,0 +1,31 @@
+{
+    "typescript.preferences.quoteStyle": "single",
+    "javascript.preferences.quoteStyle": "single",
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+        "**/internals": true
+    },
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "workbench.fontAliasing": "antialiased",
+    "workbench.iconTheme": "vscode-icons",
+    "search.exclude": {
+        "**/internals": true
+    },
+    "debug.toolBarLocation": "docked",
+    "scm.alwaysShowProviders": true,
+    "copy-syntax.defaults.lang": "ts",
+    "git.enableSmartCommit": true,
+    "git.promptToSaveFilesBeforeCommit": true,
+    "git.showPushSuccessNotification": true,
+    "debug.node.autoAttach": "on",
+    "npm.enableScriptExplorer": true,
+    "tslint.alwaysShowStatus": true,
+    "tslint.configFile": "**/tslint.json",
+    "tslint.nodePath": "**/node_modules",
+    "typescript.referencesCodeLens.enabled": true
+}

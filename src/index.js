@@ -1,16 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./containers/App/index";
-import * as serviceWorker from "./serviceWorker";
-import { StoreContext } from "redux-react-hook";
-import configureStore from "./configureStore";
-import history from "./utils/history";
-import { MuiThemeProvider } from "@material-ui/core/styles";
-import theme from "./utils/theme";
-import { ConnectedRouter } from "connected-react-router/immutable";
-import LanguageProvider from "./utils/LanguageProvider/Loadable";
-import { Provider } from "react-redux";
-import { translationMessages } from "./i18n";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './containers/App/index';
+import * as serviceWorker from './serviceWorker';
+import { StoreContext } from 'redux-react-hook';
+import configureStore from './configureStore';
+import history from './utils/history';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import theme from './utils/theme';
+import { ConnectedRouter } from 'connected-react-router/immutable';
+import LanguageProvider from './utils/LanguageProvider/Loadable';
+import { Provider } from 'react-redux';
+import { translationMessages } from './i18n';
 
 const initialState = {};
 
@@ -28,7 +28,7 @@ ReactDOM.render(
             </ConnectedRouter>
         </Provider>
     </StoreContext.Provider>,
-    document.getElementById("root"),
+    document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change
