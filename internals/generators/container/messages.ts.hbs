@@ -1,0 +1,33 @@
+/*
+ * {{ properCase name }} Messages
+ *
+ * This contains all the text/messages for the {{ properCase name }} container.
+ * {{> proprietary }}
+ */
+
+import { defineMessages } from 'react-intl';
+
+export const scope = 'app.containers.{{ properCase name }}';
+
+export default defineMessages({
+  header: {
+    defaultMessage: 'This is the {{ properCase name }} container!',
+    id: `${scope}.header`,
+  },
+  styleText: {
+    defaultMessage: 'This is the styled text!',
+    id: `${scope}.styleText`,
+  },
+  clickme: {
+    defaultMessage: 'Async Operation!',
+    id: `${scope}.clickme`,
+  },
+  titlelabel: {
+    defaultMessage: 'Title:',
+    id: `${scope}.titlelabel`,
+  },
+  idlabel: {
+    defaultMessage: 'ID:',
+    id: `${scope}.idlabel`,
+  },
+});
