@@ -1,0 +1,30 @@
+/**
+ * {{ properCase name }}
+ * Stateless function {{ properCase name }}
+ * {{> proprietary }}
+ */
+
+import React from 'react';
+
+{{#if wantMessages}}
+import { FormattedMessage } from 'react-intl';
+import messages from './messages';
+{{/if}}
+{{#if wantStyledComponents}}
+import { Title } from './styles';
+{{/if}}
+
+const {{ properCase name }} = () => {
+  return (
+    <div>
+      {{#if wantStyledComponents}}
+        <Title><FormattedMessage {...messages.styleText} /></Title>
+      {{/if}}
+    {{#if wantMessages}}
+      <FormattedMessage {...messages.header} />
+    {{/if}}
+    </div>
+  );
+};
+
+export default {{ properCase name }};

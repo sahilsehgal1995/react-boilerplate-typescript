@@ -1,0 +1,25 @@
+/**
+ * {{ properCase name }} constants
+ * {{> proprietary }}
+ */
+
+import { {{#if wantEpic}}createApiConstants, {{/if}}createConstants } from '../../utils/actioncreator';
+
+/*
+* This creates 2 constants respectively
+* DEFAULT.ACTION = '{{camelCase name}}/OPTIONAL_PREFIX_action';
+* DEFAULT.GO = '{{camelCase name}}/OPTIONAL_PREFIX_go';
+* If you dont want to further group/namespace remove optional_prefix
+* Check the file src/utils/actioncreator.ts for details
+*/
+export const DEFAULT = createConstants('{{camelCase name}}', 'optional_prefix')('ACTION', 'GO');
+
+{{#if wantEpic}}
+/*
+* This creates 3 constants respectively for EPIC calls only
+* DEFAULT_API.REQUEST = '{{camelCase name}}/REQUEST';
+* DEFAULT_API.SUCCESS = '{{camelCase name}}/SUCCESS';
+* DEFAULT_API.FAILURE = '{{camelCase name}}/FAILURE';
+*/
+export const DEFAULT_API = createApiConstants('{{camelCase name}}');
+{{/if}}

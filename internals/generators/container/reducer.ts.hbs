@@ -1,0 +1,25 @@
+/*
+ * {{ properCase name }} reducer
+ * All reducers for {{ properCase name }} goes here
+ * {{> proprietary }}
+ */
+
+import { fromJS } from 'immutable';
+import { createReducer } from '../../utils/actioncreator';
+import { DEFAULT {{#if wantEpic}}, DEFAULT_API{{/if}} } from './constants';
+import { I{{properCase name}}ApiContract } from './interface';
+
+const initialState: I{{properCase name}}ApiContract = fromJS({});
+
+/**
+ * All your reducers go here based on the constants that are created in the constants file
+ */
+const {{ camelCase name }}Reducer = createReducer(initialState, {
+  [DEFAULT.ACTION]: (state: object) => ({...state, ...initialState}),
+  {{#if wantEpic}}
+  [DEFAULT_API.SUCCESS]: (state: object, action: any) => ({...state, ...action}),
+  [DEFAULT_API.FAILURE]: (state: object, action: any) => ({...state, ...action}),
+  {{/if}}
+});
+
+export default {{ camelCase name }}Reducer;

@@ -1,0 +1,76 @@
+/*
+ * {{properCase name }}
+ * {{> proprietary }}
+ */
+
+import React{{#if wantEpic}}, {useCallback}{{/if}} from 'react';
+{{#if wantHeaders}}
+import { Helmet } from 'react-helmet';
+{{/if}}
+{{#if wantMessages}}
+import { FormattedMessage } from 'react-intl';
+{{/if}}
+{{#if wantEpic}}
+import {useDispatch, useMappedState} from 'redux-react-hook';
+import { addEpic } from '../../rootEpic';
+{{/if}}
+{{#if wantActionsAndReducer}}
+import { useInjectReducer } from '../../utils/reducerInjectors';
+{{/if}}
+{{#if wantEpic}}
+import {defaultAPIAction} from './actions';
+import epic from './epic';
+{{/if}}
+{{#if wantMessages}}
+import messages from './messages';
+{{/if}}
+{{#if wantActionsAndReducer}}
+import reducer from './reducer';
+{{/if}}
+{{#if wantStyledComponents}}
+import { Title } from './styles';
+{{/if}}
+
+{{#if wantEpic}}
+addEpic(epic);
+{{/if}}
+{{#if wantActionsAndReducer}}
+useInjectReducer('{{ camelCase name }}Reducer', reducer);
+{{/if}}
+
+const {{ properCase name }} = (props: object) => {
+  {{#if wantEpic}}
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(defaultAPIAction.request());
+  };
+  const mapState = useCallback(
+    (state) => state.get('{{ camelCase name }}Reducer'),
+    [1],
+  );
+  const {payload, error} = useMappedState(mapState);
+  {{/if}}
+  return (
+    <div>
+      {{#if wantHeaders}}
+        <Helmet title='{{properCase name}}' meta={[{content: 'Description of {{properCase name}}', name: 'description'}]}  />
+      {{/if}}
+      {{#if wantStyledComponents}}
+        <Title><FormattedMessage {...messages.styleText} /></Title>
+      {{/if}}
+      {{#if wantMessages}}
+        <FormattedMessage {...messages.header} />
+      {{/if}}
+      {{#if wantEpic}}
+          <div>
+              <button onClick={handleClick}>
+                  <FormattedMessage {...messages.clickme} />
+              </button>
+          </div>
+          {payload ? (<div> <FormattedMessage {...messages.titlelabel} /> {payload.title}<br/> <FormattedMessage {...messages.idlabel} /> {payload.id}<br/> </div>) : null}
+      {{/if}}
+    </div>
+  );
+};
+
+export default {{ properCase name }};

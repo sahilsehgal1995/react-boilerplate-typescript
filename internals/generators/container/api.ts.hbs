@@ -1,0 +1,17 @@
+/**
+ * {{properCase name}} API Endpoints
+ * Contains api calls and endpoints for {{ properCase name}}
+ * {{> proprietary }}
+ */
+
+import { Observable } from 'rxjs';
+import { http } from '../../utils/http';
+import { I{{properCase name}}ApiContract } from './interface';
+
+/**
+ * Your main api call to outside this environment goes from here
+ * Make sure your API returns an Observable of strict type of your contract that is defined in the interface
+ */
+export const {{camelCase name}}ApiCall: () => Observable<I{{properCase name}}ApiContract> =
+    (): Observable<I{{properCase name}}ApiContract> =>
+        http.get<I{{properCase name}}ApiContract>('https://jsonplaceholder.typicode.com/todos/1');

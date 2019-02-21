@@ -1,0 +1,20 @@
+/**
+ * {{ properCase name }} Messages
+ * This contains all the text for the {{ properCase name }} component.
+ * {{> proprietary }}
+ */
+
+import { defineMessages } from 'react-intl';
+
+export const scope: string = 'app.components.{{ properCase name }}';
+
+export default defineMessages({
+  header: {
+    defaultMessage: 'This is the {{ properCase name }} component!',
+    id: `${scope}.header`,
+  },
+  styleText: {
+    defaultMessage: 'This is the styled text!',
+    id: `${scope}.styleText`,
+  },
+});

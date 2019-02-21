@@ -1,0 +1,26 @@
+/**
+ * Test for Action-Creators for {{ properCase name}}
+ * {{> proprietary }}
+ */
+
+import { defaultAction{{#if wantEpic}}, defaultAPIAction{{/if}} } from '../actions';
+import { DEFAULT{{#if wantEpic}}, DEFAULT_API{{/if}} } from '../constants';
+
+describe('{{ properCase name }} actions', () => {
+  describe('Default Action', () => {
+    it('has a type of ACTION', () => {
+      const expected = {
+        type: DEFAULT.ACTION,
+      };
+      expect(defaultAction()).toEqual(expected);
+    });
+    {{#if wantEpic}}
+    it('has a type of REQUEST in DEFAULT_API', () => {
+      const expected = {
+        type: DEFAULT_API.REQUEST,
+      };
+      expect(defaultAPIAction.request()).toEqual(expected);
+    });
+    {{/if}}
+  });
+});
