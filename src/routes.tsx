@@ -1,6 +1,7 @@
 import React from 'react';
-import { MappedLayout } from './components/Layout/MappedLayout';
+import { MappedLayout } from './components/Layout';
 import PageNotFound from './components/PageNotFound/Loadable';
+import StaticPages from './containers/StaticPages/Loadable';
 // import:push
 /** ---DONOT TOUCH THIS AREA(import:push line) BANTAIS--- */
 
@@ -39,6 +40,18 @@ export const routes = [
         component: PageNotFound,
         exact: true,
         path: '/',
+    },
+    {
+        // child: [
+        //     {
+        //         component: StaticPages,
+        //         exact: false,
+        //         path: '/static',
+        //     },
+        // ],
+        component: StaticPages,
+        exact: false,
+        path: '/static/pages',
     },
     // component:push
     /** ---DONOT TOUCH THIS AREA(component:push line) BANTAIS--- */

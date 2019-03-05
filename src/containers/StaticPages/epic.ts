@@ -11,10 +11,9 @@ import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { defaultAPIAction } from './actions';
 import { staticPagesApiCall } from './api';
 import { DEFAULT_API} from './constants';
-import { IStaticPagesApiContract } from './interface';
 
 export const staticPagesEpic = (action$: ActionsObservable<Action>, state$: StateObservable<Action>):
-    Observable<string | object | IStaticPagesApiContract> | IStaticPagesApiContract => action$
+    Observable<string | object> => action$
     .pipe(
         ofType(DEFAULT_API.REQUEST),
         tap((action: Action) => {

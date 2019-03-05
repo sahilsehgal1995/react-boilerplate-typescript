@@ -6,12 +6,11 @@
 
 import { Observable } from 'rxjs';
 import { http } from '../../utils/http';
-import { IStaticPagesApiContract } from './interface';
 
 /**
  * Your main api call to outside this environment goes from here
  * Make sure your API returns an Observable of strict type of your contract that is defined in the interface
  */
-export const staticPagesApiCall: () => Observable<IStaticPagesApiContract> =
-    (): Observable<IStaticPagesApiContract> =>
-        http.get<IStaticPagesApiContract>('https://jsonplaceholder.typicode.com/todos/1');
+export const staticPagesApiCall: () => Observable<string> =
+    (): Observable<string> =>
+        http.get<string>('http://www.mocky.io/v2/5c7915e43000007d3149b1c0');

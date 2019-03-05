@@ -9,7 +9,14 @@ const defaultOptions = {};
  */
 const get: <T>(url: string, options?: any) => Observable<T> = <T>(url: string, options: any = {}): Observable<T> => {
     return from(fetch(url, { ...defaultOptions, ...options,  method: 'GET' })
-        .then((response) => response.json() as Promise<T>));
+        .then((response) => {
+            const contentType = response.headers.get('content-type');
+            if (contentType && contentType.indexOf('application/json') !== -1) {
+                return response.json() as Promise<T>;
+            } else {
+                return response.text() as unknown as Promise<T>;
+            }
+        }));
 };
 
 // just 1 call
