@@ -67,7 +67,8 @@ const {{ properCase name }} = (props: object) => {
                   <FormattedMessage {...messages.clickme} />
               </button>
           </div>
-          {payload ? (<div> <FormattedMessage {...messages.titlelabel} /> {payload.title}<br/> <FormattedMessage {...messages.idlabel} /> {payload.id}<br/> </div>) : null}
+          {payload ? (<div> <FormattedMessage {...messages.titlelabel} /> {payload.title}<br/>
+            <FormattedMessage {...messages.idlabel} /> {payload.id}<br/> </div>) : null}
       {{/if}}
     </div>
   );

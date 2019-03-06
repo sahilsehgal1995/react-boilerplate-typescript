@@ -2,6 +2,7 @@ import React from 'react';
 import {Route} from 'react-router';
 import PageNotFound from './components/PageNotFound/Loadable';
 import StaticPages from './containers/StaticPages/Loadable';
+import Form from './containers/Form/Loadable';
 // import:push
 /** ---DONOT TOUCH THIS AREA(import:push line) BANTAIS--- */
 
@@ -47,6 +48,7 @@ export const routes = [
         exact: false,
         path: '/static/pages',
     },
+    {component: Form, path: '/form'},
     // component:push
     /** ---DONOT TOUCH THIS AREA(component:push line) BANTAIS--- */
     {
