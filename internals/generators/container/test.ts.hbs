@@ -1,12 +1,19 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+/**
+* Test script for {{properCase name}}
+* {{> proprietary }}
+*/
 
-// import { {{ properCase name }} } from '../index';
+import { render } from 'enzyme';
+import React from 'react';
+
+import {{ properCase name }} from '../Loadable';
 
 describe('<{{ properCase name }} />', () => {
   it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(true);
+
+    const component = render(<{{ properCase name }} debug />);
+
+    expect(component).toMatchSnapshot();
   });
 });
 

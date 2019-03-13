@@ -1,12 +1,13 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import {Route} from 'react-router';
 import PageNotFound from './components/PageNotFound/Loadable';
+import StaticPages from './containers/StaticPages/Loadable';
 // import:push
 /** ---DONOT TOUCH THIS AREA(import:push line) BANTAIS--- */
 
-interface IRoute {
+export interface IRoute {
     path?: string;
-    component?: React.ComponentClass;
+    component?: any;
     exact?: boolean;
     routesData?: [];
     child?: IRoute[];
@@ -29,7 +30,7 @@ export const spreadRoutes = (routesData: IRoute[], parent: string = ''): IRoute[
                 key={parent + route.path}
                 exact={route.exact}
                 path={parent + route.path}
-                component={route.component}
+                render={() => <route.component />}
             />
         ),
     ]), []);
@@ -40,6 +41,11 @@ export const routes = [
         component: PageNotFound,
         exact: true,
         path: '/',
+    },
+    {
+        component: StaticPages,
+        exact: false,
+        path: '/static/pages',
     },
     // component:push
     /** ---DONOT TOUCH THIS AREA(component:push line) BANTAIS--- */

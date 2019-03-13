@@ -1,23 +1,22 @@
 /**
- * Test for Action-Creators for {{ properCase name}}
- * {{> proprietary }}
+ * Test for Action-Creators for StaticPages
+ * Created by Bantai:sahil for Turtlemint on 2/26/2019, 7:01:16 PM
  */
 
-import { defaultAction{{#if wantEpic}}, defaultAPIAction{{/if}} } from '../actions';
-import { DEFAULT{{#if wantEpic}}, DEFAULT_API{{/if}} } from '../constants';
+import { defaultAction, defaultAPIAction } from '../actions';
+import { DEFAULT, DEFAULT_API } from '../constants';
 
-describe('{{ properCase name }} actions', () => {
+describe('StaticPages actions', () => {
   describe('Default Action', () => {
     it('has a type of ACTION', () => {
       const expected = {
-       error: false,
-       meta: null,
-       payload: undefined,
-       type: DEFAULT.ACTION,
+        error: false,
+        meta: null,
+        payload: undefined,
+        type: DEFAULT.ACTION,
       };
       expect(defaultAction()).toEqual(expected);
     });
-    {{#if wantEpic}}
     it('has a type of REQUEST in DEFAULT_API', () => {
       const expected = {
         error: false,
@@ -27,6 +26,5 @@ describe('{{ properCase name }} actions', () => {
       };
       expect(defaultAPIAction.request()).toEqual(expected);
     });
-    {{/if}}
   });
 });
