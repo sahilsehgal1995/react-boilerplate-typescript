@@ -1,4 +1,4 @@
-import { Action } from 'redux';
+import {Action, AnyAction} from 'redux';
 
 /**
  * Action/Constants creator utility
@@ -182,7 +182,7 @@ export const createApiAction = <T>(constants: any) => {
  *       [DEFAULT_ACTION.DEFAULT]: (state: any) => state,
  *    });
  */
-export const createReducer = <T>(initialState: T, handlers: any) => (state: T, action: Action<T>) => {
+export const createReducer = <T>(initialState: T, handlers: any) => (state: T, action: AnyAction) => {
   const reducerFn = handlers[action.type];
   return reducerFn ? reducerFn(state, action) : initialState;
 };

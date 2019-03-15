@@ -18,7 +18,6 @@ const staticPagesReducer = createReducer(initialState, {
   [DEFAULT.ACTION]: (state: object) => ({...state, ...initialState}),
   [DEFAULT_API.SUCCESS]: (state: object, action: any) => ({...state, ...action}),
   [DEFAULT_API.FAILURE]: (state: object, action: any) => ({...state, ...action}),
-  'test':
 });
 
 export default staticPagesReducer;

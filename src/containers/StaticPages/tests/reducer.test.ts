@@ -4,18 +4,13 @@
  */
 
 import { fromJS } from 'immutable';
+import {DEFAULT_API} from '../constants';
 import {IStaticPagesApiContract} from '../interface';
 import staticPagesReducer from '../reducer';
-
-const initialState: IStaticPagesApiContract = fromJS({});
 
 describe('staticPagesReducer', () => {
   it('returns the initial state', () => {
     const initialState: IStaticPagesApiContract = fromJS({});
-    // var sucess;
-    // var payload;
-    // expect(staticPagesReducer(initialState, {type: sucess, payload})).toEqual(fromJS({}));
-    // expect(staticPagesReducer(initialState, ("")))
-    //     .toEqual({});//
+    expect(staticPagesReducer(initialState, {type: DEFAULT_API.REQUEST})).toEqual(fromJS({}));
   });
 });
