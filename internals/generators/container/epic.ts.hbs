@@ -14,7 +14,7 @@ import { DEFAULT_API} from './constants';
 import { I{{properCase name}}ApiContract } from './interface';
 
 export const {{camelCase name}}Epic = (action$: ActionsObservable<Action>, state$: StateObservable<Action>):
-    Observable<string | object | I{{properCase name}}ApiContract> | I{{properCase name}}ApiContract => action$
+    Observable<string | object | I{{properCase name}}ApiContract> => action$
     .pipe(
         ofType(DEFAULT_API.REQUEST),
         tap((action: Action) => {

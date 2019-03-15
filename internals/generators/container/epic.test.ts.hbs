@@ -2,11 +2,26 @@
  * Test cases for {{ properCase name }}'s Epic
  * {{> proprietary }}
  */
-
-// import {{ camelCase name }}Epic from '../epic';
+import {Action} from 'redux';
+import {ActionsObservable, StateObservable} from 'redux-observable';
+import { of } from 'rxjs';
+import {toArray} from 'rxjs/operators';
+import {defaultAPIAction} from '../actions';
+import {DEFAULT_API} from '../constants';
+import {{ camelCase name }}Epic from '../epic';
+import { response as mockRespone } from './mock.json';
 
 describe('{{ camelCase name }}Epic Epic', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(true);
+  it('Expect to have unit tests specified', (done) => {
+    const action$ = ActionsObservable.of({
+       type: DEFAULT_API.REQUEST,
+    });
+    const state$: StateObservable<Action> = of({}) as StateObservable<Action>;
+    const $obs = {{ camelCase name }}Epic(action$, state$).pipe(toArray());
+    $obs.subscribe((outputActions) => {
+        expect(Array.isArray(outputActions)).toBe(true);
+        expect(outputActions[0]).toEqual(defaultAPIAction.success(mockRespone));
+        done();
+    });
   });
 });

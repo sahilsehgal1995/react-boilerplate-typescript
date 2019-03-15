@@ -182,6 +182,12 @@ module.exports = {
         path: '../../src/containers/{{properCase name}}/api.ts',
         templateFile: './container/api.ts.hbs',
         abortOnFail: true,
+      },
+      {
+        type: 'add',
+        path: '../../src/containers/{{properCase name}}/tests/mock.json',
+        templateFile: './container/mock.json.hbs',
+        abortOnFail: true,
       });
     }
 

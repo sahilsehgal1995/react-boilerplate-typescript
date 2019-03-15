@@ -4,10 +4,13 @@
  */
 
 import { fromJS } from 'immutable';
+import {DEFAULT_API} from '../constants';
+import {I{{properCase name}}ApiContract} from '../interface';
 import {{ camelCase name }}Reducer from '../reducer';
 
 describe('{{ camelCase name }}Reducer', () => {
   it('returns the initial state', () => {
-    // expect({{ camelCase name }}Reducer(undefined, {})).toEqual(fromJS({}));
+    const initialState: I{{properCase name}}ApiContract = fromJS({});
+    expect({{ camelCase name }}Reducer(initialState, {type: DEFAULT_API.REQUEST})).toEqual(fromJS({}));
   });
 });
