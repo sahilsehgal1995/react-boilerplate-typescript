@@ -3,10 +3,18 @@
  * {{> proprietary }}
  */
 
+import { render } from 'enzyme';
+import React from 'react';
+
+import {{ properCase name }} from '../index';
+
 describe('<{{ properCase name }} />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(true);
-  });
+    it('Expect to have unit tests specified', () => {
+
+        const component = render(<{{ properCase name }} debug />);
+
+        expect(component).toMatchSnapshot();
+    });
 });
 
 export {};

@@ -1,26 +1,25 @@
 /**
- * {{camelCase name}} Epics
- * Contains epics for {{ properCase name}}
- * {{> proprietary }}
+ * staticPages Epics
+ * Contains epics for StaticPages
+ * Created by Bantai:sahil for Turtlemint on 2/26/2019, 7:01:16 PM
  */
 
 import { Action } from 'redux';
-import { ActionsObservable, ofType, StateObservable } from 'redux-observable';
+import {ActionsObservable, combineEpics, ofType, StateObservable} from 'redux-observable';
 import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { defaultAPIAction } from './actions';
-import { {{camelCase name}}ApiCall } from './api';
+import { staticPagesApiCall } from './api';
 import { DEFAULT_API} from './constants';
-import { I{{properCase name}}ApiContract } from './interface';
 
-export const {{camelCase name}}Epic = (action$: ActionsObservable<Action>, state$: StateObservable<Action>):
-    Observable<string | object | I{{properCase name}}ApiContract> => action$
+export const staticPagesEpic = (action$: ActionsObservable<Action>, state$: StateObservable<Action>):
+    Observable<string | object> => action$
     .pipe(
         ofType(DEFAULT_API.REQUEST),
         tap((action: Action) => {
             // console.log('Do your awesome Epic for Form in this area', action)
         }),
-        switchMap(() => {{camelCase name}}ApiCall()
+        switchMap(() => staticPagesApiCall()
             .pipe(
                 map((payload) => defaultAPIAction.success(payload)),
                 catchError((err) => of(defaultAPIAction.failure(err))),
@@ -28,4 +27,4 @@ export const {{camelCase name}}Epic = (action$: ActionsObservable<Action>, state
         ),
     );
 
-export default {{camelCase name}}Epic;
+export default combineEpics(staticPagesEpic);

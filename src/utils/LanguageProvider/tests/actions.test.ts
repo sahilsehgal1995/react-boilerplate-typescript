@@ -10,7 +10,10 @@ describe('LanguageProvider actions', () => {
   describe('Default Action', () => {
     it('has a type of ACTION', () => {
       const expected = {
-        type: DEFAULT.ACTION,
+        error: false,
+        meta: null,
+        payload: undefined,
+        type: DEFAULT.CHANGE_LOCALE,
       };
       expect(defaultAction()).toEqual(expected);
     });

@@ -10,7 +10,9 @@
             "single",
             "avoid-escape",
             "avoid-template"
-        ]
+        ],
+        "jsx-no-lambda": false,
+        "jsx-no-multiline-js": false
     },
     "jsRules": {
         "quotemark": [

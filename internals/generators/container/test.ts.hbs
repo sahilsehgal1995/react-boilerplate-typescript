@@ -1,13 +1,35 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+/**
+* Test script for {{properCase name}}
+* {{> proprietary }}
+*/
 
-// import { {{ properCase name }} } from '../index';
+import React from 'react';
+import { render, waitForElement } from 'react-testing-library';
+import { Provider } from 'react-redux';
+
+import {{ properCase name }} from '../Loadable';
+import reducer from '../reducer';
+import {StoreContext} from "redux-react-hook";
+import {store} from "../../../index";
+import {useInjectReducer} from "../../../utils/reducerInjectors";
 
 describe('<{{ properCase name }} />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(true);
-  });
+    useInjectReducer('{{ camelCase name }}Reducer', reducer);
+        const TestComponent = (
+        <StoreContext.Provider value={store}>
+            <Provider store={store}>
+                <{{ properCase name }} debug />
+            </Provider>
+        </StoreContext.Provider>
+    );
+
+    it('Expect to have unit tests specified', async() => {
+        const component = await waitForElement(() => new Promise(resolve => {
+            let { container } = render(TestComponent);
+            resolve(container);
+        }));
+        expect(component).toMatchSnapshot();
+    });
 });
 
 export {};
