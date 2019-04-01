@@ -45,7 +45,7 @@ export const routes = [
     {
         component: StaticPages,
         exact: false,
-        path: '/static/pages',
+        path: '/content',
     },
     // component:push
     /** ---DONOT TOUCH THIS AREA(component:push line) BANTAIS--- */

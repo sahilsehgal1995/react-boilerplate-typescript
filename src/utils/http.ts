@@ -8,13 +8,6 @@ const defaultOptions = {};
  * @param options options for fetch call
  */
 
-export interface IApiContract {
-    type: string;
-    payload?: object | string;
-    meta?: object;
-    error: boolean;
-}
-
 const get: <T>(url: string, options?: any) => Observable<T> = <T>(url: string, options: any = {}): Observable<T> => {
     return from(fetch(url, { ...defaultOptions, ...options,  method: 'GET' })
         .then((response) => {
