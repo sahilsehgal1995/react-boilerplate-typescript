@@ -1,6 +1,3 @@
-# Turtlemint 2.0
-Front end application for https://www.turtlemint.com
-
 ## Introduction
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) with added features from
 [React boilerplate](https://github.com/react-boilerplate/react-boilerplate).<br>
