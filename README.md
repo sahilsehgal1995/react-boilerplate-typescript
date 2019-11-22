@@ -14,7 +14,6 @@ Before installing any package, it is highly recommended to check the typescript 
 8. `Jest`: Unit testing is done through Jest library. By default test files are generated with each component and containers.
 
 ## Setup
-- Add a new domain `turtlemint.pt.com` to your **/etc/hosts** against 127.0.0.1
 - Install package dependencies `npm install`
 - Install any TSlinter extension for your IDE
 - Run `npm install -g tslint typescript` globally to have your IDE(extension) lint Typescript
